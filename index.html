@@ -3,556 +3,506 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sandeep Parmar – Data Analyst & Research Professional</title>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --c:#00f0ff;--m:#ff00ff;--v:#7000ff;
-  --bg:#07071a;
-  --s:rgba(14,14,30,0.72);
-  --b:rgba(255,255,255,0.07);
-  --bc:rgba(0,240,255,0.22);
-  --tx:#e6e6f0;--mu:#7a7a96;
-}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',system-ui,sans-serif;
-  background:var(--bg);color:var(--tx);
-  min-height:100vh;overflow-x:hidden;line-height:1.65;
-}
-body::before{
-  content:'';position:fixed;inset:0;z-index:-1;
-  background:
-    radial-gradient(ellipse 900px 700px at 8% 40%,rgba(0,240,255,0.08) 0%,transparent 70%),
-    radial-gradient(ellipse 700px 600px at 92% 75%,rgba(255,0,255,0.08) 0%,transparent 70%),
-    radial-gradient(ellipse 600px 500px at 55% 5%,rgba(112,0,255,0.09) 0%,transparent 70%);
-  animation:aurora 22s ease-in-out infinite alternate;
-}
-@keyframes aurora{
-  0%  {transform:scale(1)    translate(0,0)}
-  50% {transform:scale(1.06) translate(35px,-35px)}
-  100%{transform:scale(0.96) translate(-25px,25px)}
-}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:rgba(0,240,255,0.28);border-radius:3px}
-
-/* layout */
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-
-/* glass */
-.glass{
-  background:var(--s);
-  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  border:1px solid var(--b);border-radius:20px;
-}
-.glass-c{
-  background:var(--s);
-  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  border:1px solid var(--bc);border-radius:20px;
-}
-
-/* gradient text */
-.grad{
-  background:linear-gradient(135deg,var(--c),var(--m),var(--v));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;background-size:300% 300%;
-  animation:gs 8s ease infinite;
-}
-@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
-/* ── HEADER ── */
-header{
-  padding:52px 48px;text-align:center;
-  margin:30px 0 18px;position:relative;overflow:hidden;
-}
-header::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(0,240,255,0.04),rgba(255,0,255,0.04));
-  border-radius:20px;pointer-events:none;
-}
-h1{
-  font-size:clamp(2.2rem,5.5vw,4rem);
-  font-weight:900;letter-spacing:-1.5px;line-height:1.05;margin-bottom:10px;
-}
-.tagline{font-size:1.15rem;color:var(--mu);font-weight:400;margin-bottom:28px;letter-spacing:.3px}
-
-/* contact pills */
-.contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px}
-.cpill{
-  display:flex;align-items:center;gap:6px;
-  background:rgba(255,255,255,0.04);border:1px solid var(--b);
-  padding:8px 18px;border-radius:40px;font-size:.88rem;
-  color:var(--tx);text-decoration:none;transition:all .3s;
-}
-.cpill:hover{border-color:var(--c);color:var(--c);background:rgba(0,240,255,0.06);transform:translateY(-2px)}
-
-/* badge */
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  border:1.5px solid rgba(0,240,255,.45);
-  background:rgba(0,240,255,.07);
-  padding:12px 32px;border-radius:50px;
-  font-size:.97rem;font-weight:600;cursor:default;
-  animation:bp 3s ease-in-out infinite;
-}
-@keyframes bp{
-  0%,100%{box-shadow:0 0 18px rgba(0,240,255,.25)}
-  50%{box-shadow:0 0 34px rgba(255,0,255,.45);border-color:rgba(255,0,255,.5)}
-}
-
-/* ── NAV ── */
-nav{
-  background:rgba(8,8,20,.85);
-  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  border:1px solid var(--b);border-radius:60px;
-  padding:9px 14px;position:sticky;top:16px;z-index:100;margin-bottom:28px;
-}
-.nav-inner{display:flex;justify-content:center;flex-wrap:wrap;gap:5px}
-.nav-btn{
-  background:transparent;border:1.5px solid transparent;
-  color:var(--mu);padding:9px 24px;border-radius:40px;
-  cursor:pointer;font-size:.9rem;font-weight:600;font-family:inherit;transition:all .3s;
-}
-.nav-btn:hover:not(.active){color:var(--c);border-color:rgba(0,240,255,.35);background:rgba(0,240,255,.05)}
-.nav-btn.active{
-  background:linear-gradient(135deg,var(--c),var(--m));
-  color:#fff;border-color:transparent;
-  box-shadow:0 4px 22px rgba(0,240,255,.35);
-}
-
-/* ── SECTIONS ── */
-.content-section{display:none}
-.content-section.active{display:block}
-
-.sec-title{
-  font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;
-  margin-bottom:6px;position:relative;padding-bottom:16px;
-}
-.sec-title::after{
-  content:'';position:absolute;bottom:0;left:0;
-  width:56px;height:3px;
-  background:linear-gradient(90deg,var(--c),transparent);border-radius:2px;
-}
-.sec-lead{color:var(--mu);font-size:1rem;margin-bottom:32px;max-width:640px}
-
-/* ── BENTO GRID ── */
-.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-bottom:28px}
-.b8{grid-column:span 8}.b4{grid-column:span 4}
-.b6{grid-column:span 6}.b12{grid-column:span 12}
-@media(max-width:820px){.b8,.b4,.b6,.b12{grid-column:span 12}}
-
-.bcard{
-  padding:26px;transition:transform .3s,box-shadow .3s;
-  position:relative;overflow:hidden;
-}
-.bcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
-.bcard .icon{font-size:1.9rem;margin-bottom:10px;display:block}
-.bcard .label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:var(--mu);margin-bottom:7px}
-.bcard .val{font-size:1.45rem;font-weight:800;color:#fff;line-height:1.2}
-.bcard .sub{font-size:.87rem;color:var(--mu);margin-top:4px}
-
-.comp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.ctag{
-  font-size:.8rem;padding:5px 13px;border-radius:30px;
-  border:1px solid var(--bc);color:var(--c);
-  background:rgba(0,240,255,.06);font-weight:500;transition:all .25s;cursor:default;
-}
-.ctag:hover{background:rgba(0,240,255,.16);color:#fff;transform:translateY(-2px)}
-
-/* ── TIMELINE ── */
-.timeline{display:flex;flex-direction:column;gap:18px}
-.tcard{
-  padding:26px 30px;
-  border-left:3px solid rgba(0,240,255,.18);
-  border-radius:0 16px 16px 0;
-  transition:all .3s;position:relative;
-}
-.tcard:hover{border-left-color:var(--c);transform:translateX(5px);box-shadow:0 10px 40px rgba(0,240,255,.12)}
-.tcard::before{
-  content:'';position:absolute;left:-7px;top:26px;
-  width:11px;height:11px;background:var(--c);
-  border-radius:50%;box-shadow:0 0 12px rgba(0,240,255,.7);
-}
-.dbadge{
-  display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.4px;
-  color:var(--c);background:rgba(0,240,255,.09);
-  border:1px solid var(--bc);padding:4px 13px;border-radius:20px;margin-bottom:11px;
-}
-.tcard h3{font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:3px}
-.tcard .org{font-size:.88rem;color:var(--c);font-weight:600;margin-bottom:13px}
-.tcard ul{list-style:none;padding:0}
-.tcard li{
-  position:relative;padding-left:18px;margin-bottom:7px;
-  font-size:.92rem;color:var(--mu);line-height:1.65;
-}
-.tcard li::before{content:'▹';position:absolute;left:0;color:var(--c);font-weight:bold}
-
-/* ── SKILLS ── */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.skill-group{padding:24px 26px}
-.skill-group h3{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--mu);margin-bottom:14px}
-.stags{display:flex;flex-wrap:wrap;gap:8px}
-.stag{
-  font-size:.83rem;padding:6px 15px;border-radius:30px;
-  border:1px solid var(--bc);color:var(--c);
-  background:rgba(0,240,255,.06);font-weight:500;
-  transition:all .28s;cursor:default;
-}
-.stag:hover{background:rgba(0,240,255,.18);color:#fff;transform:translateY(-3px);box-shadow:0 5px 18px rgba(0,240,255,.3)}
-
-/* ── EDUCATION ── */
-.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.edu-card{padding:28px 30px;transition:all .3s}
-.edu-card:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(0,240,255,.14)}
-.edu-card .degree{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:4px}
-.edu-card .uni{font-size:.9rem;color:var(--c);font-weight:600;margin-bottom:12px}
-.edu-card .gpa{font-size:1.6rem;font-weight:900;margin-bottom:12px}
-.edu-card .cw-label{font-size:.72rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--mu);font-weight:600;margin-bottom:8px}
-.edu-card ul{list-style:none;padding:0}
-.edu-card li{position:relative;padding-left:16px;font-size:.88rem;color:var(--mu);margin-bottom:5px}
-.edu-card li::before{content:'▹';position:absolute;left:0;color:var(--c)}
-.meta-pill{
-  display:inline-block;font-size:.75rem;background:rgba(255,255,255,.05);
-  border:1px solid var(--b);padding:3px 12px;border-radius:20px;color:var(--mu);margin-bottom:14px;
-}
-
-/* ── FOOTER ── */
-footer{text-align:center;padding:40px 20px;margin-top:20px;color:var(--mu);font-size:.85rem}
-footer span{color:var(--c)}
-
-/* ── RESPONSIVE ── */
-@media(max-width:640px){
-  header{padding:34px 22px}
-  .tcard{padding:20px 20px 20px 26px}
-  nav{border-radius:20px}
-  .nav-inner{flex-direction:column;align-items:stretch}
-  .nav-btn{text-align:center}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
-
+<title>Sandeep Kanaram Parmar — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-<div class="wrap">
 
-  <!-- ══════════ HEADER ══════════ -->
-  <header class="glass" data-aos="fade-down" data-aos-duration="700">
-    <h1 class="grad">Sandeep Kanaram Parmar</h1>
-    <p class="tagline">Data Analyst &amp; Research Professional</p>
+<!-- Pipeline progress rail -->
+<div class="rail" aria-hidden="true">
+  <div class="rail-track">
+    <div class="rail-fill" id="railFill"></div>
+  </div>
+  <div class="rail-nodes">
+    <div class="rail-node" data-target="intake"><span class="rail-node-label">Intake</span></div>
+    <div class="rail-node" data-target="experience"><span class="rail-node-label">Process</span></div>
+    <div class="rail-node" data-target="projects"><span class="rail-node-label">Output</span></div>
+    <div class="rail-node" data-target="skills"><span class="rail-node-label">Validate</span></div>
+    <div class="rail-node" data-target="education"><span class="rail-node-label">Source</span></div>
+    <div class="rail-node" data-target="contact"><span class="rail-node-label">Connect</span></div>
+  </div>
+</div>
 
-    <div class="contacts">
-      <span class="cpill">📱 +91 98197 57983</span>
-      <a class="cpill" href="mailto:parmarsandeep01@gmail.com">✉️ parmarsandeep01@gmail.com</a>
-      <a class="cpill" href="https://www.linkedin.com/in/sandeepparmar306/" target="_blank">🔗 LinkedIn</a>
-      <a class="cpill" href="https://github.com/sandeepparmar3006" target="_blank">💻 GitHub</a>
-    </div>
-
-    <div class="badge">🌍 Open to Global Opportunities</div>
-  </header>
-
-  <!-- ══════════ NAV ══════════ -->
-  <nav data-aos="fade-down" data-aos-delay="150">
-    <div class="nav-inner">
-      <button class="nav-btn active" onclick="show('overview',this)">Overview</button>
-      <button class="nav-btn" onclick="show('experience',this)">Experience</button>
-      <button class="nav-btn" onclick="show('projects',this)">Projects</button>
-      <button class="nav-btn" onclick="show('skills',this)">Skills</button>
-      <button class="nav-btn" onclick="show('education',this)">Education</button>
-    </div>
+<!-- Top bar -->
+<header class="topbar">
+  <div class="topbar-id">
+    <span class="topbar-dot" aria-hidden="true"></span>
+    Sandeep&nbsp;Parmar <span class="topbar-sep">/</span> Data Analyst
+  </div>
+  <nav class="topbar-nav" aria-label="Section navigation">
+    <a href="#intake" data-target="intake">01 Overview</a>
+    <a href="#experience" data-target="experience">02 Experience</a>
+    <a href="#projects" data-target="projects">03 Projects</a>
+    <a href="#skills" data-target="skills">04 Skills</a>
+    <a href="#education" data-target="education">05 Education</a>
+    <a href="#contact" data-target="contact">06 Contact</a>
   </nav>
+  <a class="topbar-cta" href="mailto:parmarsandeep01@gmail.com">Get in touch</a>
+  <button class="topbar-burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
-  <!-- ══════════ OVERVIEW ══════════ -->
-  <section id="overview" class="content-section active">
+<!-- Mobile menu -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile section navigation">
+  <a href="#intake" data-target="intake">01 · Overview</a>
+  <a href="#experience" data-target="experience">02 · Experience</a>
+  <a href="#projects" data-target="projects">03 · Projects</a>
+  <a href="#skills" data-target="skills">04 · Skills</a>
+  <a href="#education" data-target="education">05 · Education</a>
+  <a href="#contact" data-target="contact">06 · Contact</a>
+</nav>
 
-    <div class="glass" style="padding:32px 36px;margin-bottom:20px" data-aos="fade-up">
-      <h2 class="sec-title grad">Professional Overview</h2>
-      <p class="sec-lead">
-        Analytical and detail-oriented Data Analyst with expertise in analytics, data interpretation,
-        and research methodologies. Proficient in <strong style="color:#00f0ff">Python, SQL, and Tableau</strong>
-        with specialised experience in data pipeline development, statistical analysis, and cloud-based analytics.
+<main>
+
+  <!-- ══════ 01 · HERO / INTAKE ══════ -->
+  <section id="intake" class="hero" aria-label="Overview">
+    <div class="hero-watermark" aria-hidden="true">DATA</div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow reveal" data-reveal="fade-up">
+        Data Analyst · Research Professional
+      </div>
+
+      <h1 class="hero-headline">
+        <span class="line reveal" data-reveal="char-stagger" data-delay="0">Turning raw</span>
+        <span class="line reveal" data-reveal="char-stagger" data-delay="120">signals into</span>
+        <span class="line reveal" data-reveal="char-stagger" data-delay="240"><em>decisions</em><span class="cursor" aria-hidden="true">.</span></span>
+      </h1>
+
+      <p class="hero-bio reveal" data-reveal="fade-up" data-delay="420">
+        Analytical and detail-oriented with expertise across the full data lifecycle — from pipeline architecture and statistical modelling to cloud analytics and interactive dashboards. Experienced across research, operations, and production environments.
       </p>
-    </div>
 
-    <!-- Bento Grid -->
-    <div class="bento">
-
-      <!-- Education – wide -->
-      <div class="bcard glass-c b8" data-aos="fade-up" data-aos-delay="100">
-        <span class="icon">🎓</span>
-        <div class="label">Education</div>
-        <div class="val">Master's in Information Systems</div>
-        <div class="sub">Syracuse University</div>
-        <div class="gpa grad" style="font-size:2rem;font-weight:900;margin-top:14px">GPA 3.95 / 4.0</div>
-      </div>
-
-      <!-- Experience – small -->
-      <div class="bcard glass b4" style="border:1px solid rgba(255,0,255,0.22)" data-aos="fade-up" data-aos-delay="150">
-        <span class="icon">💼</span>
-        <div class="label">Experience</div>
-        <div class="val">Research Analyst</div>
-        <div class="sub">Syracuse University</div>
-        <div style="margin-top:14px;font-size:.85rem;color:#b0b0c0;font-weight:600">1 Year Professional</div>
-      </div>
-
-      <!-- Global Ready – half -->
-      <div class="bcard glass b6" style="border:1px solid rgba(112,0,255,0.3)" data-aos="fade-up" data-aos-delay="200">
-        <span class="icon">🌐</span>
-        <div class="label">Global Ready</div>
-        <div class="val">Open to Visa Sponsorship</div>
-        <div class="sub" style="margin-top:8px"> Worldwide</div>
-      </div>
-
-      <!-- Core Skills – half -->
-      <div class="bcard glass-c b6" data-aos="fade-up" data-aos-delay="250">
-        <span class="icon">🛠️</span>
-        <div class="label">Core Skills</div>
-        <div class="val" style="font-size:1.1rem">Python · SQL · Tableau</div>
-        <div class="sub" style="margin-top:6px">Cloud Analytics · Machine Learning</div>
-      </div>
-
-      <!-- Competencies – full -->
-      <div class="bcard glass b12" data-aos="fade-up" data-aos-delay="300">
-        <div class="label">Core Competencies</div>
-        <div class="comp-tags">
-          <span class="ctag">Data Analysis</span>
-          <span class="ctag">Python &amp; SQL</span>
-          <span class="ctag">Data Visualization</span>
-          <span class="ctag">Machine Learning</span>
-          <span class="ctag">Statistical Modeling</span>
-          <span class="ctag">Cloud Platforms</span>
-          <span class="ctag">ETL Pipelines</span>
-          <span class="ctag">Research Analytics</span>
+      <div class="hero-stats reveal" data-reveal="fade-up" data-delay="520" role="list" aria-label="Key statistics">
+        <div class="hero-stat" role="listitem">
+          <div class="stat-num" data-count="3.95" data-decimals="2">0.00</div>
+          <div class="stat-label">GPA · Syracuse MS</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="stat-num" data-count="9.87" data-decimals="2">0.00</div>
+          <div class="stat-label">GPA · Mumbai BE</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="stat-num" data-count="3" data-suffix="+">0</div>
+          <div class="stat-label">Years Experience</div>
         </div>
       </div>
 
-    </div><!-- /bento -->
+      <div class="hero-scrollcue reveal" data-reveal="fade-up" data-delay="620" aria-hidden="true">
+        <span>Scroll to process</span>
+        <div class="scrollcue-line"><div class="scrollcue-dot"></div></div>
+      </div>
+    </div>
   </section>
 
-  <!-- ══════════ EXPERIENCE ══════════ -->
-  <section id="experience" class="content-section">
-    <div class="glass" style="padding:32px 36px;margin-bottom:24px" data-aos="fade-up">
-      <h2 class="sec-title grad">Professional Experience</h2>
-      <p class="sec-lead">End-to-end data roles spanning research, operations, and production analytics.</p>
+  <!-- ══════ COMPETENCIES + STACK (still part of intake narrative) ══════ -->
+  <section class="competencies" aria-label="Core competencies">
+    <div class="section-head reveal" data-reveal="fade-up">
+      <span class="section-tag">// what i bring</span>
+      <h2 class="section-title">Core Competencies</h2>
+      <p class="section-sub">Six areas where I turn ambiguous data problems into shipped, decision-ready output.</p>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-cell reveal" data-reveal="fade-up" data-delay="0">
+        <span class="comp-icon" aria-hidden="true">⬡</span>
+        <div class="comp-name">Data Analysis</div>
+        <div class="comp-desc">Quantitative &amp; qualitative research, statistical modelling, pattern recognition</div>
+      </div>
+      <div class="comp-cell reveal" data-reveal="fade-up" data-delay="60">
+        <span class="comp-icon" aria-hidden="true">⬡</span>
+        <div class="comp-name">Pipeline Development</div>
+        <div class="comp-desc">ETL design, data preprocessing, workflow automation at scale</div>
+      </div>
+      <div class="comp-cell reveal" data-reveal="fade-up" data-delay="120">
+        <span class="comp-icon" aria-hidden="true">⬡</span>
+        <div class="comp-name">Visualisation</div>
+        <div class="comp-desc">Tableau, Power BI, and custom dashboards that tell a clear story</div>
+      </div>
+      <div class="comp-cell reveal" data-reveal="fade-up" data-delay="0">
+        <span class="comp-icon" aria-hidden="true">⬡</span>
+        <div class="comp-name">Cloud Analytics</div>
+        <div class="comp-desc">AWS, Azure, GCP — architecting scalable analytics infrastructure</div>
+      </div>
+      <div class="comp-cell reveal" data-reveal="fade-up" data-delay="60">
+        <span class="comp-icon" aria-hidden="true">⬡</span>
+        <div class="comp-name">Machine Learning</div>
+        <div class="comp-desc">Classification, NLP, federated learning, scikit-learn, Spark</div>
+      </div>
+      <div class="comp-cell reveal" data-reveal="fade-up" data-delay="120">
+        <span class="comp-icon" aria-hidden="true">⬡</span>
+        <div class="comp-name">Research Methods</div>
+        <div class="comp-desc">Agile research sprints, behavioural insight, academic rigour</div>
+      </div>
+    </div>
+
+    <div class="stack-band reveal" data-reveal="fade-up">
+      <div class="stack-band-label">Stack</div>
+      <div class="stack-row" role="list" aria-label="Technology stack">
+        <span class="stack-tag" role="listitem">Python</span>
+        <span class="stack-tag" role="listitem">SQL</span>
+        <span class="stack-tag" role="listitem">Tableau</span>
+        <span class="stack-tag" role="listitem">Power BI</span>
+        <span class="stack-tag" role="listitem">Azure ML</span>
+        <span class="stack-tag" role="listitem">AWS</span>
+        <span class="stack-tag" role="listitem">GCP</span>
+        <span class="stack-tag" role="listitem">Pandas</span>
+        <span class="stack-tag" role="listitem">Scikit-learn</span>
+        <span class="stack-tag" role="listitem">Apache Spark</span>
+        <span class="stack-tag" role="listitem">MySQL</span>
+        <span class="stack-tag" role="listitem">Firebase</span>
+        <span class="stack-tag" role="listitem">Excel</span>
+        <span class="stack-tag" role="listitem">Java</span>
+        <span class="stack-tag" role="listitem">JavaScript</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ 02 · EXPERIENCE / PROCESS ══════ -->
+  <section id="experience" class="stage" aria-label="Professional experience">
+    <div class="stage-head reveal" data-reveal="fade-up">
+      <span class="stage-num">02</span>
+      <div>
+        <span class="section-tag">// process</span>
+        <h2 class="section-title">Professional History</h2>
+        <p class="section-sub">End-to-end data roles spanning research, operations, and production analytics.</p>
+      </div>
     </div>
 
     <div class="timeline">
+      <div class="timeline-spine" aria-hidden="true"><div class="timeline-spine-fill" id="spineFill"></div></div>
 
-      <div class="tcard glass" data-aos="fade-up" data-aos-delay="100">
-        <span class="dbadge">Jan 2025 – Dec 2025</span>
-        <h3>Research Analyst (OPT)</h3>
-        <div class="org">Syracuse University – School of Information Studies</div>
-        <ul>
-          >Conducted quantitative and qualitative research on hybrid work collaboration using Python and Excel</li>
-          >Built data pipelines and dashboards for productivity analysis</li>
-          >Applied agile workflows to structure research sprints</li>
-          >Leveraged data preprocessing and statistical tools to uncover behavioural insights</li>
-        </ul>
-      </div>
+      <article class="tl-item reveal" data-reveal="slide-right">
+        <div class="tl-marker" aria-hidden="true"></div>
+        <div class="tl-date">Jan 2025 — Dec 2025</div>
+        <div class="tl-body">
+          <h3 class="tl-title">Research Analyst</h3>
+          <div class="tl-org">Syracuse University · School of Information Studies · OPT</div>
+          <ul class="tl-list">
+            <li>Conducted quantitative and qualitative research on hybrid work collaboration using Python and Excel</li>
+            <li>Built data pipelines and dashboards for productivity analysis across distributed teams</li>
+            <li>Applied agile workflows to structure iterative research sprints</li>
+            <li>Leveraged statistical tools and data preprocessing to surface actionable behavioural insights</li>
+          </ul>
+          <div class="tl-metrics" aria-label="Key metrics">
+            <span class="tl-metric">Dashboards created</span>
+            <span class="tl-metric">Actionable insights delivered</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="tcard glass" data-aos="fade-up" data-aos-delay="150">
-        <span class="dbadge">Feb 2023 – Dec 2024</span>
-        <h3>Student Supervisor</h3>
-        <div class="org">Syracuse University Student Center</div>
-        <ul>
-          >Supervised 15+ student employees, ensuring smooth daily operations</li>
-          >Optimised workflow and delegated tasks, reducing wait times by 20%</li>
-          >Designed Excel-based inventory system, cutting shortages by 15%</li>
-        </ul>
-      </div>
+      <article class="tl-item reveal" data-reveal="slide-left">
+        <div class="tl-marker" aria-hidden="true"></div>
+        <div class="tl-date">Feb 2023 — Dec 2024</div>
+        <div class="tl-body">
+          <h3 class="tl-title">Student Supervisor</h3>
+          <div class="tl-org">Syracuse University Student Center</div>
+          <ul class="tl-list">
+            <li>Supervised 15+ student employees, ensuring smooth daily operations</li>
+            <li>Optimised workflows and delegated tasks, reducing average wait times</li>
+            <li>Designed Excel-based inventory tracking system, cutting stock shortages</li>
+          </ul>
+          <div class="tl-metrics" aria-label="Key metrics">
+            <span class="tl-metric">↓ 20% reduction in wait times</span>
+            <span class="tl-metric">↓ 15% fewer stock shortages</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="tcard glass" data-aos="fade-up" data-aos-delay="200">
-        <span class="dbadge">Apr 2021 – Nov 2022</span>
-        <h3>Assistant Manager</h3>
-        <div class="org">Arbuda Plastics, Mumbai, India</div>
-        <ul>
-          >Led production data analysis, reducing order fulfilment time by 85%</li>
-          >Built reporting dashboards using SQL and Excel</li>
-          >Improved production planning accuracy by 20%</li>
-          >Decreased production delays by 40%</li>
-        </ul>
-      </div>
-
+      <article class="tl-item reveal" data-reveal="slide-right">
+        <div class="tl-marker" aria-hidden="true"></div>
+        <div class="tl-date">Apr 2021 — Nov 2022</div>
+        <div class="tl-body">
+          <h3 class="tl-title">Assistant Manager</h3>
+          <div class="tl-org">Arbuda Plastics · Mumbai, India</div>
+          <ul class="tl-list">
+            <li>Led production data analysis and reporting across manufacturing operations</li>
+            <li>Built SQL and Excel reporting dashboards that connected plant floor data to management decisions</li>
+            <li>Improved production planning accuracy and reduced order fulfilment delays</li>
+          </ul>
+          <div class="tl-metrics" aria-label="Key metrics">
+            <span class="tl-metric">↑ 85% faster order fulfilment</span>
+            <span class="tl-metric">↑ 20% planning accuracy gain</span>
+            <span class="tl-metric">↓ 40% fewer delays</span>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- ══════════ PROJECTS ══════════ -->
-  <section id="projects" class="content-section">
-    <div class="glass" style="padding:32px 36px;margin-bottom:24px" data-aos="fade-up">
-      <h2 class="sec-title grad">Featured Projects</h2>
-      <p class="sec-lead">Applied research and engineering projects across ML, cloud, and systems design.</p>
+  <!-- ══════ 03 · PROJECTS / OUTPUT ══════ -->
+  <section id="projects" class="stage stage-alt" aria-label="Featured projects">
+    <div class="stage-head reveal" data-reveal="fade-up">
+      <span class="stage-num">03</span>
+      <div>
+        <span class="section-tag">// output</span>
+        <h2 class="section-title">Featured Work</h2>
+        <p class="section-sub">Applied research and engineering across ML, cloud, and systems design.</p>
+      </div>
     </div>
 
-    <div class="timeline">
-
-      <div class="tcard glass" data-aos="fade-up" data-aos-delay="100">
-        <span class="dbadge">Jan 2023 – Apr 2023</span>
-        <h3>Sentiment Analysis using Azure Cognitive Services</h3>
-        <div class="org">Syracuse University</div>
-        <ul>
-          >Built NLP-based sentiment classifier using Azure ML and Spark</li>
-          >Developed pipeline to classify user reviews at scale</li>
-          >Implemented Azure Key Vault for secure credential management</li>
+    <div class="proj-grid">
+      <article class="proj-card reveal" data-reveal="fade-up" data-delay="0">
+        <div class="proj-card-top">
+          <div class="proj-index">Project 01</div>
+          <div class="proj-tags" aria-label="Technologies used">
+            <span class="proj-tag">Azure ML</span>
+            <span class="proj-tag">Spark</span>
+            <span class="proj-tag">NLP</span>
+            <span class="proj-tag">Python</span>
+          </div>
+        </div>
+        <h3 class="proj-name">Sentiment Analysis via Azure Cognitive Services</h3>
+        <div class="proj-org">Syracuse University · Jan – Apr 2023</div>
+        <ul class="proj-body">
+          <li>Built NLP-based sentiment classifier using Azure ML and Apache Spark</li>
+          <li>Developed pipeline to classify user reviews at scale</li>
+          <li>Implemented Azure Key Vault for secure credential management</li>
         </ul>
-      </div>
+      </article>
 
-      <div class="tcard glass" data-aos="fade-up" data-aos-delay="150">
-        <span class="dbadge">Jul 2021 – Apr 2022</span>
-        <h3>Framework for Federated Learning</h3>
-        <div class="org">University of Mumbai</div>
-        <ul>
-          >Designed secure federated learning model with Paillier encryption</li>
-          >Optimised gRPC protocols for efficient model aggregation</li>
-          >Achieved runner-up position at DJ ASCII competition</li>
+      <article class="proj-card reveal" data-reveal="fade-up" data-delay="80">
+        <div class="proj-card-top">
+          <div class="proj-index">Project 02</div>
+          <div class="proj-tags" aria-label="Technologies used">
+            <span class="proj-tag">gRPC</span>
+            <span class="proj-tag">Encryption</span>
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">ML</span>
+          </div>
+        </div>
+        <h3 class="proj-name">Framework for Federated Learning</h3>
+        <div class="proj-org">University of Mumbai · Jul 2021 – Apr 2022</div>
+        <ul class="proj-body">
+          <li>Designed privacy-preserving federated model with Paillier homomorphic encryption</li>
+          <li>Optimised gRPC protocols for efficient distributed model aggregation</li>
+          <li>Runner-up at DJ ASCII intercollegiate competition</li>
         </ul>
-      </div>
+      </article>
 
-      <div class="tcard glass" data-aos="fade-up" data-aos-delay="200">
-        <span class="dbadge">Jun 2018 – Apr 2019</span>
-        <h3>Smart Sentry – Digital Visitor Management</h3>
-        <div class="org">University of Mumbai</div>
-        <ul>
-          >Created digital check-in system using Android Studio and Firebase</li>
-          >Reduced wait times through real-time logging</li>
-          >Enhanced security through authentication protocols</li>
+      <article class="proj-card reveal" data-reveal="fade-up" data-delay="160">
+        <div class="proj-card-top">
+          <div class="proj-index">Project 03</div>
+          <div class="proj-tags" aria-label="Technologies used">
+            <span class="proj-tag">Android</span>
+            <span class="proj-tag">Firebase</span>
+            <span class="proj-tag">Java</span>
+          </div>
+        </div>
+        <h3 class="proj-name">Smart Sentry — Digital Visitor Management</h3>
+        <div class="proj-org">University of Mumbai · Jun 2018 – Apr 2019</div>
+        <ul class="proj-body">
+          <li>Created real-time digital check-in system using Android Studio and Firebase</li>
+          <li>Reduced visitor wait times through live logging and authentication flows</li>
+          <li>Enhanced facility security via layered authentication protocols</li>
         </ul>
-      </div>
-
+      </article>
     </div>
   </section>
 
-  <!-- ══════════ SKILLS ══════════ -->
-  <section id="skills" class="content-section">
-    <div class="glass" style="padding:32px 36px;margin-bottom:24px" data-aos="fade-up">
-      <h2 class="sec-title grad">Technical Skills</h2>
-      <p class="sec-lead">A full-stack data toolkit spanning languages, platforms, and visualisation tools.</p>
+  <!-- ══════ 04 · SKILLS / VALIDATE ══════ -->
+  <section id="skills" class="stage" aria-label="Technical skills">
+    <div class="stage-head reveal" data-reveal="fade-up">
+      <span class="stage-num">04</span>
+      <div>
+        <span class="section-tag">// validate</span>
+        <h2 class="section-title">Technical Proficiency</h2>
+        <p class="section-sub">A full-stack data toolkit spanning languages, platforms, and visualisation.</p>
+      </div>
     </div>
 
     <div class="skills-grid">
-
-      <div class="skill-group glass-c" data-aos="fade-up" data-aos-delay="100">
-        <h3>Programming Languages</h3>
-        <div class="stags">
-          <span class="stag">Python</span>
-          <span class="stag">SQL</span>
-          <span class="stag">Java</span>
-          <span class="stag">C</span>
-          <span class="stag">JavaScript</span>
-          <span class="stag">HTML/CSS</span>
+      <div class="skill-row reveal" data-reveal="fade-up" data-delay="0">
+        <div class="skill-row-head">
+          <span class="skill-cat">Languages</span>
+          <span class="skill-pct" data-count="92" data-suffix="%">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+        <div class="skill-items">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">C</span>
+          <span class="skill-pill">HTML/CSS</span>
         </div>
       </div>
 
-      <div class="skill-group glass" data-aos="fade-up" data-aos-delay="150">
-        <h3>Libraries &amp; Frameworks</h3>
-        <div class="stags">
-          <span class="stag">Pandas</span>
-          <span class="stag">NumPy</span>
-          <span class="stag">Matplotlib</span>
-          <span class="stag">Scikit-learn</span>
+      <div class="skill-row reveal" data-reveal="fade-up" data-delay="60">
+        <div class="skill-row-head">
+          <span class="skill-cat">Libraries</span>
+          <span class="skill-pct" data-count="85" data-suffix="%">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+        <div class="skill-items">
+          <span class="skill-pill">Pandas</span>
+          <span class="skill-pill">NumPy</span>
+          <span class="skill-pill">Scikit-learn</span>
+          <span class="skill-pill">Matplotlib</span>
+          <span class="skill-pill">Spark</span>
         </div>
       </div>
 
-      <div class="skill-group glass-c" data-aos="fade-up" data-aos-delay="200">
-        <h3>Data Visualisation</h3>
-        <div class="stags">
-          <span class="stag">Tableau</span>
-          <span class="stag">Power BI</span>
-          <span class="stag">Excel (Advanced)</span>
+      <div class="skill-row reveal" data-reveal="fade-up" data-delay="120">
+        <div class="skill-row-head">
+          <span class="skill-cat">Visualisation</span>
+          <span class="skill-pct" data-count="90" data-suffix="%">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+        <div class="skill-items">
+          <span class="skill-pill">Tableau</span>
+          <span class="skill-pill">Power BI</span>
+          <span class="skill-pill">Excel (Advanced)</span>
         </div>
       </div>
 
-      <div class="skill-group glass" data-aos="fade-up" data-aos-delay="250">
-        <h3>Cloud Platforms</h3>
-        <div class="stags">
-          <span class="stag">AWS</span>
-          <span class="stag">Azure</span>
-          <span class="stag">GCP</span>
+      <div class="skill-row reveal" data-reveal="fade-up" data-delay="0">
+        <div class="skill-row-head">
+          <span class="skill-cat">Cloud</span>
+          <span class="skill-pct" data-count="80" data-suffix="%">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+        <div class="skill-items">
+          <span class="skill-pill">AWS</span>
+          <span class="skill-pill">Azure</span>
+          <span class="skill-pill">GCP</span>
+          <span class="skill-pill">Azure ML</span>
+          <span class="skill-pill">Key Vault</span>
         </div>
       </div>
 
-      <div class="skill-group glass-c" data-aos="fade-up" data-aos-delay="300">
-        <h3>Databases</h3>
-        <div class="stags">
-          <span class="stag">MySQL</span>
-          <span class="stag">Oracle</span>
-          <span class="stag">Firebase</span>
-          <span class="stag">SQL Server</span>
+      <div class="skill-row reveal" data-reveal="fade-up" data-delay="60">
+        <div class="skill-row-head">
+          <span class="skill-cat">Databases</span>
+          <span class="skill-pct" data-count="87" data-suffix="%">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="87"></div></div>
+        <div class="skill-items">
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">Oracle</span>
+          <span class="skill-pill">Firebase</span>
+          <span class="skill-pill">SQL Server</span>
         </div>
       </div>
 
+      <div class="skill-row reveal" data-reveal="fade-up" data-delay="120">
+        <div class="skill-row-head">
+          <span class="skill-cat">Methods</span>
+          <span class="skill-pct" data-count="88" data-suffix="%">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+        <div class="skill-items">
+          <span class="skill-pill">ETL Design</span>
+          <span class="skill-pill">Statistical Analysis</span>
+          <span class="skill-pill">Machine Learning</span>
+          <span class="skill-pill">Agile</span>
+          <span class="skill-pill">NLP</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ══════════ EDUCATION ══════════ -->
-  <section id="education" class="content-section">
-    <div class="glass" style="padding:32px 36px;margin-bottom:24px" data-aos="fade-up">
-      <h2 class="sec-title grad">Education</h2>
-      <p class="sec-lead">Strong academic foundation in computer engineering and information systems.</p>
+  <!-- ══════ 05 · EDUCATION / SOURCE ══════ -->
+  <section id="education" class="stage stage-alt" aria-label="Education">
+    <div class="stage-head reveal" data-reveal="fade-up">
+      <span class="stage-num">05</span>
+      <div>
+        <span class="section-tag">// source</span>
+        <h2 class="section-title">Academic Background</h2>
+        <p class="section-sub">Strong foundation in computer engineering and information systems.</p>
+      </div>
     </div>
 
     <div class="edu-grid">
+      <article class="edu-card reveal" data-reveal="fade-up" data-delay="0">
+        <div class="edu-card-head">
+          <div>
+            <div class="edu-degree">M.S. Information Systems</div>
+            <div class="edu-uni">Syracuse University · iSchool</div>
+          </div>
+          <div class="edu-gpa-block">
+            <span class="edu-gpa" data-count="3.95" data-decimals="2">0.00</span>
+            <span class="edu-gpa-sub">/ 4.0 · Dec 2024</span>
+          </div>
+        </div>
+        <div class="edu-card-body">
+          <div class="edu-meta">Coursework highlights</div>
+          <ul class="edu-courses">
+            <li>Cloud Management &amp; Architecture</li>
+            <li>Data Science &amp; Analytics</li>
+            <li>Database Management Systems</li>
+            <li>Information Security</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="edu-card glass-c" data-aos="fade-up" data-aos-delay="100">
-        <div class="degree">🎓 M.S. Information Systems</div>
-        <div class="uni">Syracuse University</div>
-        <div class="meta-pill">December 2024</div>
-        <div class="gpa grad">3.95 / 4.0</div>
-        <div class="cw-label">Coursework</div>
-        <ul>
-          >Cloud Management</li>
-          >Data Science</li>
-          >Database Management</li>
-          >Information Security</li>
-        </ul>
-      </div>
-
-      <div class="edu-card glass" data-aos="fade-up" data-aos-delay="150">
-        <div class="degree">🎓 B.E. Computer Engineering</div>
-        <div class="uni">University of Mumbai</div>
-        <div class="meta-pill">May 2022</div>
-        <div class="gpa grad">9.87 / 10.0</div>
-        <div class="cw-label">Coursework</div>
-        <ul>
-          >Machine Learning</li>
-          >Artificial Intelligence</li>
-          >Natural Language Processing</li>
-        </ul>
-      </div>
-
+      <article class="edu-card reveal" data-reveal="fade-up" data-delay="100">
+        <div class="edu-card-head">
+          <div>
+            <div class="edu-degree">B.E. Computer Engineering</div>
+            <div class="edu-uni">University of Mumbai</div>
+          </div>
+          <div class="edu-gpa-block">
+            <span class="edu-gpa" data-count="9.87" data-decimals="2">0.00</span>
+            <span class="edu-gpa-sub">/ 10.0 · May 2022</span>
+          </div>
+        </div>
+        <div class="edu-card-body">
+          <div class="edu-meta">Coursework highlights</div>
+          <ul class="edu-courses">
+            <li>Machine Learning</li>
+            <li>Artificial Intelligence</li>
+            <li>Natural Language Processing</li>
+            <li>Distributed Systems</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
-</div><!-- /wrap -->
+  <!-- ══════ 06 · CONTACT / CONNECT ══════ -->
+  <section id="contact" class="contact" aria-label="Contact">
+    <div class="contact-watermark" aria-hidden="true">CONNECT</div>
+    <div class="contact-inner">
+      <div class="reveal" data-reveal="fade-up">
+        <span class="section-tag">// connect</span>
+        <h2 class="contact-title">Let's turn your<br>data into <em>decisions</em>.</h2>
+        <p class="contact-sub">Open to Data Analyst, Analytics Engineer, and Research roles across EU, UAE, Asia &amp; global remote teams.</p>
+      </div>
 
-<!-- ══════════ FOOTER ══════════ -->
-<footer data-aos="fade-up">
-  <p>Built by <span>Sandeep Parmar</span> · Data Analyst &amp; Research Professional</p>
-  <p style="margin-top:6px">Open to <span>EU · UAE · ASIA</span> &amp; global opportunities</p>
-</footer>
+      <div class="contact-links reveal" data-reveal="fade-up" data-delay="100">
+        <a class="contact-link" href="mailto:parmarsandeep01@gmail.com">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-value">parmarsandeep01@gmail.com</span>
+        </a>
+        <a class="contact-link" href="tel:+919819757983">
+          <span class="contact-link-label">Phone</span>
+          <span class="contact-link-value">+91 98197 57983</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/sandeepparmar306/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-value">/in/sandeepparmar306</span>
+        </a>
+        <a class="contact-link" href="https://github.com/sandeepparmar3006" target="_blank" rel="noopener noreferrer">
+          <span class="contact-link-label">GitHub</span>
+          <span class="contact-link-value">/sandeepparmar3006</span>
+        </a>
+      </div>
+    </div>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true, duration: 650, easing: 'ease-in-out' });
-  function show(id, btn) {
-    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    btn.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    AOS.refresh();
-  }
+    <footer class="site-footer">
+      <span>Sandeep Parmar · Data Analyst &amp; Research Professional</span>
+      <span class="availability"><span class="availability-dot" aria-hidden="true"></span>Open to Global Opportunities</span>
+    </footer>
+  </section>
 
-  document.addEventListener('keydown', function(e) {
-    const btns = Array.from(document.querySelectorAll('.nav-btn'));
-    const active = document.querySelector('.nav-btn.active');
-    const idx = btns.indexOf(active);
-    if (e.key === 'ArrowRight' && idx < btns.length - 1) btns[idx + 1].click();
-    if (e.key === 'ArrowLeft'  && idx > 0)               btns[idx - 1].click();
-  });
-</script>
+</main>
 
+<script src="script.js"></script>
 </body>
 </html>
