@@ -267,6 +267,44 @@
     </div>
 
     <div class="proj-grid">
+      <article class="proj-card proj-card--featured reveal" data-reveal="fade-up" data-delay="0">
+        <div class="proj-card-top">
+          <div class="proj-index proj-index--featured">Featured · 2026</div>
+          <div class="proj-tags" aria-label="Technologies used">
+            <span class="proj-tag">RAG</span>
+            <span class="proj-tag">LLM Function Calling</span>
+            <span class="proj-tag">pgvector</span>
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Node.js</span>
+          </div>
+        </div>
+        <h3 class="proj-name">SenpAI</h3>
+        <div class="proj-org">Anime &amp; Manga RAG Assistant · Live in Production</div>
+        <ul class="proj-body">
+          <li>Answers anime and manga questions with 96% accuracy on a 45-question held-out eval, by routing every query through an LLM function-calling router</li>
+          <li>Router picks between semantic search and structured filter lookup, solving whole-corpus questions that top-k retrieval alone gets wrong</li>
+          <li>Built the full pipeline: AniList ingestion, multilingual embeddings in Supabase pgvector, serverless generation API on Vercel</li>
+        </ul>
+        <div class="proj-stats" role="list" aria-label="Evaluation results">
+          <div class="proj-stat" role="listitem">
+            <div class="proj-stat-num" data-count="96" data-suffix="%">0%</div>
+            <div class="proj-stat-label">Answer accuracy</div>
+          </div>
+          <div class="proj-stat" role="listitem">
+            <div class="proj-stat-num" data-count="98" data-suffix="%">0%</div>
+            <div class="proj-stat-label">Retrieval precision</div>
+          </div>
+          <div class="proj-stat" role="listitem">
+            <div class="proj-stat-num" data-count="100" data-suffix="%">0%</div>
+            <div class="proj-stat-label">Route match</div>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link proj-link--primary" href="https://senpai-seven.vercel.app" target="_blank" rel="noopener noreferrer">Try the live demo</a>
+          <a class="proj-link proj-link--ghost" href="https://github.com/sandeepparmar3006/senpai" target="_blank" rel="noopener noreferrer">View source</a>
+        </div>
+      </article>
+
       <article class="proj-card reveal" data-reveal="fade-up" data-delay="0">
         <div class="proj-card-top">
           <div class="proj-index">Project 01</div>
