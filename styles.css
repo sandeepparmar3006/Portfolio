@@ -877,11 +877,8 @@ a { color: inherit; text-decoration: none; }
 .proj-card--featured .proj-name { font-size: 1.7rem; }
 .proj-card--featured .proj-body { max-width: 68ch; }
 .proj-index--featured { color: var(--pulse); flex-shrink: 0; }
-
-@media (min-width: 700px) {
-  .proj-card--featured .proj-card-top { flex-wrap: nowrap; }
-  .proj-card--featured .proj-tags { flex-wrap: nowrap; flex-shrink: 1; min-width: 0; }
-}
+.proj-card--featured .proj-card-top { flex-wrap: wrap; }
+.proj-card--featured .proj-tags { flex: 1 1 auto; min-width: 0; }
 
 .proj-stats {
   display: flex;
