@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { GeistPixelSquare } from "geist/font/pixel";
 
 const siteUrl = "https://sandeepparmar.com";
-const title = "Sandeep Kanaram Parmar - Data Analyst & AI Engineer";
+const title = "Sandeep Kanaram Parmar - Data Analyst · AI Systems";
 const description =
   "Sandeep Parmar. Data analysis, AI systems engineering, and shipped web products. RAG assistant at 98% tool-routing accuracy, live production sites, and dashboard work.";
 
