@@ -19,26 +19,25 @@ export function Hero() {
       <div className="hero-inner">
         <Reveal>
           <div className="hero-eyebrow">
-            Trained as a Data Analyst. Building AI systems and shipping web
-            products now.
+            Data Analysis · AI Systems · Applied Engineering
           </div>
         </Reveal>
         <h1 className="hero-headline">
           <Reveal>
-            <span className="line">I turn ambiguous problems</span>
+            <span className="line">Where messy data</span>
           </Reveal>
           <Reveal delay={100}>
-            <span className="line accent">into shipped systems.</span>
+            <span className="line accent">becomes working systems.</span>
           </Reveal>
         </h1>
         <Reveal delay={320}>
           <p className="hero-bio">
-            I started as a Data Analyst, but most of what I build now doesn&apos;t
-            fit that title. I&apos;ve shipped a RAG assistant hitting 96% eval
-            accuracy on real queries, built and still run a live B2B
-            manufacturer site, and spent two years on pipeline and dashboard
-            work in research and ops roles. AI tooling gets me from idea to
-            production fast, but the judgment and the shipping are still mine.
+            Data Analyst by background, with an MS in Information Systems
+            from Syracuse University and hands-on experience across Python,
+            SQL, and machine learning. Recent work spans a production RAG
+            assistant with 98% tool-routing accuracy, a live B2B manufacturer
+            site, and two years of pipeline, dashboard, and research work
+            across academic and manufacturing operations roles.
           </p>
         </Reveal>
         <Reveal delay={420}>
