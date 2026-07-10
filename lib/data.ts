@@ -94,9 +94,9 @@ export const projects: Project[] = [
     tags: ["RAG", "LLM Function Calling", "pgvector", "Python", "Node.js"],
     featured: true,
     points: [
-      "Answers anime and manga questions with 96% accuracy on a 45-question held-out eval, by routing every query through an LLM function-calling router",
-      "Router picks between semantic search and structured filter lookup, solving whole-corpus questions that top-k retrieval alone gets wrong",
-      "Streams answers token-by-token over SSE, exposes retrieval reasoning in a live inspectable panel, and guards the public endpoint with per-IP and global rate limiting",
+      "Answers anime and manga questions with 96% accuracy on a 45-question held-out eval, by routing every query through an LLM function-calling router across three retrieval paths",
+      "Router picks between semantic search, structured filter lookup, and review-based opinion search, solving whole-corpus and sentiment questions that top-k retrieval alone gets wrong",
+      "Streams answers token-by-token over SSE, surfaces sources as cards with real AniList cover art, exposes retrieval reasoning in a live inspectable panel, and guards the public endpoint with per-IP and global rate limiting",
     ],
     stats: [
       { value: "96%", label: "Answer accuracy" },
