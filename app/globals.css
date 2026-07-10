@@ -103,7 +103,7 @@ a {
 }
 .rail-fill {
   width: 100%;
-  background: linear-gradient(180deg, var(--pulse), var(--data));
+  background: var(--pulse);
   transition: height 0.4s ease-out;
 }
 .rail-nodes {
@@ -166,12 +166,6 @@ a {
   align-items: center;
   gap: 8px;
   white-space: nowrap;
-}
-.topbar-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--signal);
 }
 .topbar-sep { color: var(--dim); }
 .topbar-nav {
@@ -408,7 +402,7 @@ section {
   background: var(--warm);
   border: 1px solid var(--rule);
   border-radius: 6px;
-  color: var(--signal);
+  color: var(--pulse);
 }
 
 /* ── Projects ── */
