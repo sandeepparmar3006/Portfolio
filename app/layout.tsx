@@ -5,9 +5,9 @@ import { GeistMono } from "geist/font/mono";
 import { GeistPixelSquare } from "geist/font/pixel";
 
 const siteUrl = "https://sandeepparmar.com";
-const title = "Sandeep Kanaram Parmar - Data Analyst";
+const title = "Sandeep Kanaram Parmar - Data, AI & Product";
 const description =
-  "Sandeep Parmar, Data Analyst. Python, SQL, cloud analytics, dashboards, and production data pipelines.";
+  "Sandeep Parmar. Data analysis, AI systems engineering, and shipped web products. RAG assistant at 96% eval accuracy, live production sites, and dashboard work.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

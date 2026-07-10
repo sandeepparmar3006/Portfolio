@@ -138,21 +138,21 @@ lib/
 ## Digital Strategy
 
 ### Portfolio Goals (priority order)
-1. Job opportunities - Data Analyst / Data Engineer / Analytics roles
-2. Freelance / consulting - data projects, dashboards, analysis
-3. Personal brand credibility in data + tech
-4. Recruiter quick scan - name, role, stack, contact in < 5 seconds
+1. Job opportunities - Data Analyst / AI Engineer / Data Engineer / Product-facing engineering roles
+2. Freelance / consulting - data, AI systems, and web product work
+3. Personal brand credibility as a builder across data, AI, and web, not a single-title specialist
+4. Recruiter quick scan - name, range of skills, contact in < 5 seconds
 
 ### Target Audience
-Hiring managers, tech recruiters, startup CTOs/founders, peers in data/analytics. Not general public - personal-brand SEO only.
+Hiring managers, tech recruiters, startup CTOs/founders, peers in data/AI/web. Not general public - personal-brand SEO only.
 
 ### Sandeep's Profile — Keep Accurate
-- Role: Data Analyst
-- Stack: Python, SQL, Tableau, Power BI, Azure ML, AWS, GCP, Pandas, Scikit-learn, Apache Spark, MySQL, Firebase, Excel, Java, JavaScript
+- Positioning: Data Analyst by training, now building AI systems and shipping web products. Show as a range of skills, not one job title.
+- Stack: Python, SQL, Tableau, Power BI, Azure ML, AWS, GCP, Pandas, Scikit-learn, Apache Spark, MySQL, Firebase, Excel, Java, JavaScript, Next.js, TypeScript, RAG/LLM engineering
 - Contact: parmarsandeep01@gmail.com
 
 ### SEO
-- Title format: `Sandeep Kanaram Parmar - Data Analyst` (hyphen, never em dash - see Copy Rules)
+- Title format: `Sandeep Kanaram Parmar - Data, AI & Product` (hyphen, never em dash - see Copy Rules)
 - Metadata (title, description, OG, canonical) lives in `app/layout.tsx`
 - One H1 (hero) → H2 (section titles) → H3 (subsections)
 
