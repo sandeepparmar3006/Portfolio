@@ -24,10 +24,25 @@ export default function Rail() {
   }, []);
 
   useEffect(() => {
-    const idx = nav.findIndex((n) => n.id === active);
-    if (fillRef.current) {
-      fillRef.current.style.height = `${((idx + 1) / nav.length) * 100}%`;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const idx = nav.findIndex((n) => n.id === active);
+      if (fillRef.current) {
+        fillRef.current.style.height = `${((idx + 1) / nav.length) * 100}%`;
+      }
+      return;
     }
+    let raf: number;
+    const tick = () => {
+      const doc = document.documentElement;
+      const scrollable = doc.scrollHeight - window.innerHeight;
+      const fraction = scrollable > 0 ? window.scrollY / scrollable : 0;
+      if (fillRef.current) {
+        fillRef.current.style.height = `${Math.min(1, Math.max(0, fraction)) * 100}%`;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, [active]);
 
   return (

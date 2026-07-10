@@ -263,15 +263,21 @@ section {
 .contact-watermark {
   position: absolute;
   right: -2%;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 12%;
   font-family: var(--font-geist-pixel-square), monospace;
-  font-size: clamp(8rem, 22vw, 20rem);
-  color: var(--warm);
+  font-size: clamp(6rem, 16vw, 14rem);
+  color: var(--ink);
+  opacity: 0.05;
   pointer-events: none;
   user-select: none;
   line-height: 1;
   z-index: 0;
+}
+@media (forced-colors: active) {
+  .hero-watermark,
+  .contact-watermark {
+    display: none;
+  }
 }
 .hero-inner { position: relative; z-index: 1; }
 .hero-eyebrow {
