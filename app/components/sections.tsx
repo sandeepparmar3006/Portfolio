@@ -304,7 +304,7 @@ export function Contact() {
         </Reveal>
       </div>
       <footer className="site-footer">
-        <span>Sandeep Parmar · Data Analyst &amp; Research Professional</span>
+        <span>Sandeep Parmar · Data Analyst &amp; AI Systems</span>
         <span className="availability">
           <span className="availability-dot" aria-hidden="true" />
           Open to Global Opportunities
