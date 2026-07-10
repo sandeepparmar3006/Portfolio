@@ -1,0 +1,65 @@
+/* Portfolio v2 — dark tech-editorial token system.
+   Token names carried over from v1 styles.css, values remapped to dark theme. */
+
+:root {
+  --ink: #e8e6df;        /* primary text (was near-black, now bone) */
+  --paper: #0c0c10;      /* page background (was warm paper, now off-black) */
+  --warm: #14141a;       /* subtle surface / card bg */
+  --rule: #26262e;       /* borders / dividers */
+  --dim: #8a8894;        /* muted / secondary text */
+  --accent: #d4d2ca;     /* light accent */
+  --pulse: #e05c3e;      /* primary accent — burnt red, brightened for dark bg contrast */
+  --data: #5b8def;       /* blue — data / tech / links */
+  --signal: #34d399;     /* green — success / active state */
+
+  --rail-w: 64px;
+  --topbar-h: 76px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-geist-pixel-square), var(--font-geist-sans), sans-serif;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+code, .mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--pulse);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--pulse);
+  color: var(--paper);
+}
