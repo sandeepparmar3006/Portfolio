@@ -32,12 +32,9 @@ export function Hero() {
         </h1>
         <Reveal delay={320}>
           <p className="hero-bio">
-            Data Analyst by background, with an MS in Information Systems
-            from Syracuse University and hands-on experience across Python,
-            SQL, and machine learning. Recent work spans a production RAG
-            assistant with 98% tool-routing accuracy, a live B2B manufacturer
-            site, and two years of pipeline, dashboard, and research work
-            across academic and manufacturing operations roles.
+            Data Analyst by background, now building AI systems and shipping
+            production web work. Analytical rigor is still the throughline
+            connecting all of it.
           </p>
         </Reveal>
         <Reveal delay={420}>

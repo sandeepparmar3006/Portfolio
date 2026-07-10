@@ -10,7 +10,7 @@ export default function Topbar() {
       <header className="topbar">
         <div className="topbar-id">
           <span className="topbar-dot" aria-hidden="true" />
-          Sandeep&nbsp;Parmar <span className="topbar-sep">/</span> Data · AI · Product
+          Sandeep&nbsp;Parmar <span className="topbar-sep">/</span> Data Analyst · AI Systems
         </div>
         <nav className="topbar-nav" aria-label="Section navigation">
           {nav.map((n, i) => (
