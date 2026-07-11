@@ -25,7 +25,7 @@ Before every execution, state:
 **Sandeep Kanaram Parmar — Data Analyst** personal portfolio.
 Next.js 16 (App Router, TypeScript), dark tech-editorial visual language. Migrated from a 3-file vanilla HTML/CSS/JS build in July 2026.
 Email: `parmarsandeep01@gmail.com`
-Production domain: `sandeepparmar.com` (Vercel project `sandeep-parmar`)
+Production URL: `sandeep-parmar.vercel.app` (Vercel project `sandeep-parmar`) - no custom domain owned
 
 ---
 
