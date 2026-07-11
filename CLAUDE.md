@@ -173,7 +173,8 @@ Hiring managers, tech recruiters, startup CTOs/founders, peers in data/AI/web. N
 ## Copy Rules
 - **No em dashes anywhere in visible copy** - use a hyphen or restructure the sentence. Applies to headlines, labels, body, captions, buttons.
 - No section-number eyebrows or fake percentage bars (retired from v1 during the taste-skill audit) - skills render as grouped pills, not `X%` bars.
-- One accent color (`--pulse`) used consistently, not swapped per section.
+- `--pulse` is the single accent for CTAs, links, active states, and text emphasis - never swapped per section.
+- Exception: the data-node motif (particle field + its static echoes) uses all three semantic tokens (`--pulse`, `--data`, `--signal`) together, since that palette already carries meaning (data/tech, success/active) tied to the "Data · AI Systems" positioning. This is a decorative/background system, not a text or interactive accent - it doesn't compete with the `--pulse`-only rule above.
 
 ---
 
