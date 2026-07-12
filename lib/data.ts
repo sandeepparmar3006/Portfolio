@@ -116,6 +116,7 @@ export const projects: Project[] = [
     org: "PVC/EVA Footwear Manufacturer · Live in Production",
     tags: ["HTML/CSS/JS", "GitHub Pages", "JSON-LD", "CSP"],
     featured: true,
+    accent: "amber",
     points: [
       "Built a lead-generation site for a B2B footwear manufacturer with a WhatsApp/quote-first conversion flow tailored to wholesale and OEM buyers",
       "Implemented JSON-LD structured data and a hardened CSP with zero framework dependencies",
