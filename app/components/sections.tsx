@@ -75,9 +75,14 @@ export function Competencies() {
       <Reveal className="stack-band">
         <div className="stack-band-label mono">Stack</div>
         <div className="stack-row" role="list" aria-label="Technology stack">
-          {stack.map((t) => (
-            <span className="stack-tag" role="listitem" key={t}>
-              {t}
+          {stack.map((t, i) => (
+            <span
+              className={`stack-tag${t.core ? " stack-tag--core" : ""}`}
+              role="listitem"
+              key={t.name}
+              style={{ transitionDelay: `${i * 22}ms` }}
+            >
+              {t.name}
             </span>
           ))}
         </div>

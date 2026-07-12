@@ -22,10 +22,31 @@ export const competencies = [
   { name: "Digital Strategy", desc: "Lighthouse SEO 100 · Accessibility 96 - leading Arbuda's digital presence" },
 ];
 
-export const stack = [
-  "Python", "SQL", "Tableau", "Power BI", "Azure ML", "AWS", "GCP", "Pandas",
-  "Scikit-learn", "Apache Spark", "MySQL", "Firebase", "Excel", "Java",
-  "JavaScript", "Node.js", "Supabase", "Vercel", "RAG",
+/* core: true = leads the row, differentiator for the "AI Systems" positioning.
+   Everything here already appears in skillGroups below - no new claims. */
+export const stack: { name: string; core?: boolean }[] = [
+  { name: "RAG", core: true },
+  { name: "LLM Function Calling", core: true },
+  { name: "Machine Learning", core: true },
+  { name: "Vector Search", core: true },
+  { name: "Python", core: true },
+  { name: "SQL", core: true },
+  { name: "AWS", core: true },
+  { name: "Azure ML" },
+  { name: "GCP" },
+  { name: "Pandas" },
+  { name: "Scikit-learn" },
+  { name: "Apache Spark" },
+  { name: "Tableau" },
+  { name: "Power BI" },
+  { name: "MySQL" },
+  { name: "Supabase" },
+  { name: "Node.js" },
+  { name: "JavaScript" },
+  { name: "Java" },
+  { name: "Firebase" },
+  { name: "Vercel" },
+  { name: "Excel" },
 ];
 
 export const timeline = [

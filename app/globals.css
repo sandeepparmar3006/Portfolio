@@ -411,6 +411,20 @@ section {
   border-radius: 999px;
   color: var(--accent);
 }
+.stack-tag {
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+.stack-band.in .stack-tag { opacity: 1; transform: none; }
+.stack-tag--core {
+  border-color: var(--data);
+  color: var(--ink);
+  font-weight: 600;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stack-tag { opacity: 1; transform: none; transition: border-color 0.2s ease-out, color 0.2s ease-out; }
+}
 
 /* ── Timeline ── */
 .timeline {
