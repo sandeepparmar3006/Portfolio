@@ -211,7 +211,7 @@ export function Projects() {
 
 export function Skills() {
   return (
-    <section id="skills" className="stage" aria-label="Technical skills">
+    <section id="skills" className="stage stage-alt" aria-label="Technical skills">
       <Reveal className="section-head">
         <h2 className="section-title">Technical Proficiency</h2>
         <p className="section-sub">
@@ -241,7 +241,7 @@ export function Skills() {
 
 export function Education() {
   return (
-    <section id="education" className="stage stage-alt" aria-label="Education">
+    <section id="education" className="stage" aria-label="Education">
       <Reveal className="section-head">
         <h2 className="section-title">Academic Background</h2>
         <p className="section-sub">

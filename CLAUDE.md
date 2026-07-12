@@ -93,9 +93,9 @@ Production URL: `sandeep-parmar.vercel.app` (Vercel project `sandeep-parmar`) - 
 ### Section Map (anchors preserved from v1 for SEO/muscle memory)
 ```
 #intake      → Hero / Overview
+#skills      → Tech stack (moved next to Competencies - claims block, then proof arc below)
 #experience  → Work history
 #projects    → Portfolio projects
-#skills      → Tech stack
 #education   → Degrees / certs
 #contact     → Get in touch
 ```
