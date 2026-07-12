@@ -489,12 +489,16 @@ section {
 .proj-card[data-accent="data"] { --item-accent: var(--data); }
 .proj-card[data-accent="signal"] { --item-accent: var(--signal); }
 .proj-card[data-accent="amber"] { --item-accent: var(--amber); }
+.proj-card.in,
 .proj-card:hover {
   border-color: var(--item-accent);
-  transform: translateY(-2px);
 }
+.proj-card:hover { transform: translateY(-2px); }
 .proj-card--featured { border-color: color-mix(in srgb, var(--pulse) 40%, var(--rule)); }
-.proj-card--featured:hover { border-color: var(--item-accent); }
+.proj-card--featured.in,
+.proj-card--featured:hover {
+  border-color: var(--item-accent);
+}
 .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .proj-name { font-size: 1.3rem; }
 .proj-org { color: var(--dim); font-size: 14px; }
@@ -513,7 +517,10 @@ section {
   font-size: 1.6rem;
   color: var(--pulse);
 }
-.proj-card:hover .proj-stat-num { color: var(--item-accent); }
+.proj-card.in .proj-stat-num,
+.proj-card:hover .proj-stat-num {
+  color: var(--item-accent);
+}
 .proj-stat-label {
   font-size: 11px;
   color: var(--dim);
