@@ -56,8 +56,9 @@ Production URL: `sandeep-parmar.vercel.app` (Vercel project `sandeep-parmar`) - 
 --pulse:  #e05c3e   /* primary accent - burnt red */
 --data:   #5b8def   /* blue - data / tech / links */
 --signal: #34d399   /* green - success / active state */
+--amber:  #d9a13e   /* amber - item accent only, never UI chrome */
 ```
-**Never hardcode hex values. Always use these tokens.** All pass WCAG AA against `--paper` (verified: ink 15.6:1, dim 5.6:1, pulse 5.4:1, data 6.0:1, signal 10.2:1).
+**Never hardcode hex values. Always use these tokens.** All pass WCAG AA against `--paper` (verified: ink 15.6:1, dim 5.6:1, pulse 5.4:1, data 6.0:1, signal 10.2:1, amber 8.4:1).
 
 ### Typography
 | Role | Font | CSS var |
@@ -173,8 +174,13 @@ Hiring managers, tech recruiters, startup CTOs/founders, peers in data/AI/web. N
 ## Copy Rules
 - **No em dashes anywhere in visible copy** - use a hyphen or restructure the sentence. Applies to headlines, labels, body, captions, buttons.
 - No section-number eyebrows or fake percentage bars (retired from v1 during the taste-skill audit) - skills render as grouped pills, not `X%` bars.
-- `--pulse` is the single accent for CTAs, links, active states, and text emphasis - never swapped per section.
-- Exception: the data-node motif (particle field + its static echoes) uses all three semantic tokens (`--pulse`, `--data`, `--signal`) together, since that palette already carries meaning (data/tech, success/active) tied to the "Data · AI Systems" positioning. This is a decorative/background system, not a text or interactive accent - it doesn't compete with the `--pulse`-only rule above.
+- **Accent system - chrome vs content items:**
+  - `--pulse` is the only accent for UI chrome: nav, CTAs, links, focus rings, active states, text emphasis. Never swapped per section.
+  - Content items (currently: project cards) may each own ONE accent from `--pulse` / `--data` / `--signal` / `--amber`, set via `accent` field in `lib/data.ts` and rendered as `data-accent` on the card (`--item-accent` custom property in `globals.css`). Omitted = `--pulse`.
+  - Item-accent surfaces are small only: hover border, featured border tint, stat numbers, link hover border. Never full backgrounds, headlines, or body text. Cards sit neutral at rest (except featured border tint); color appears on hover.
+  - Same item = same color everywhere it appears, permanently. Consistency lock is per-item, not per-page.
+  - Cap: 4 item colors total. Do not add a fifth token for variety.
+- Exception: the data-node motif (particle field + its static echoes) uses the semantic tokens (`--pulse`, `--data`, `--signal`) together, since that palette already carries meaning (data/tech, success/active) tied to the "Data · AI Systems" positioning. This is a decorative/background system, not a text or interactive accent.
 
 ---
 

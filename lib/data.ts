@@ -83,6 +83,8 @@ export type Project = {
   tags: string[];
   points: string[];
   featured?: boolean;
+  /* item-owned accent: same color everywhere this project appears; omit = pulse */
+  accent?: "pulse" | "data" | "signal" | "amber";
   stats?: { value: string; label: string }[];
   links?: { label: string; href: string; primary?: boolean }[];
 };
@@ -93,6 +95,7 @@ export const projects: Project[] = [
     org: "Anime & Manga RAG Assistant · Live in Production",
     tags: ["RAG", "LLM Function Calling", "pgvector", "Python", "Node.js"],
     featured: true,
+    accent: "data",
     points: [
       "Answers anime and manga questions with 96% accuracy on a 45-question held-out eval, by routing every query through an LLM function-calling router across three retrieval paths",
       "Router picks between semantic search, structured filter lookup, and review-based opinion search, solving whole-corpus and sentiment questions that top-k retrieval alone gets wrong",
@@ -129,6 +132,7 @@ export const projects: Project[] = [
     name: "Sentiment Analysis via Azure Cognitive Services",
     org: "Syracuse University · Jan - Apr 2023",
     tags: ["Azure ML", "Spark", "NLP", "Python"],
+    accent: "amber",
     points: [
       "Built NLP-based sentiment classifier using Azure ML and Apache Spark",
       "Developed pipeline to classify user reviews at scale",
@@ -139,6 +143,7 @@ export const projects: Project[] = [
     name: "Framework for Federated Learning",
     org: "University of Mumbai · Jul 2021 - Apr 2022",
     tags: ["gRPC", "Encryption", "Python", "ML"],
+    accent: "signal",
     points: [
       "Designed privacy-preserving federated model with Paillier homomorphic encryption",
       "Optimised gRPC protocols for efficient distributed model aggregation",
@@ -149,6 +154,7 @@ export const projects: Project[] = [
     name: "Smart Sentry - Digital Visitor Management",
     org: "University of Mumbai · Jun 2018 - Apr 2019",
     tags: ["Android", "Firebase", "Java"],
+    accent: "data",
     points: [
       "Created real-time digital check-in system using Android Studio and Firebase",
       "Reduced visitor wait times through live logging and authentication flows",

@@ -11,6 +11,7 @@
   --pulse: #e05c3e;      /* primary accent — burnt red, brightened for dark bg contrast */
   --data: #5b8def;       /* blue — data / tech / links */
   --signal: #34d399;     /* green — success / active state */
+  --amber: #d9a13e;      /* amber — item accent only, never UI chrome */
 
   --rail-w: 64px;
   --topbar-h: 76px;
@@ -474,6 +475,7 @@ section {
   gap: 24px;
 }
 .proj-card {
+  --item-accent: var(--pulse);
   background: var(--paper);
   border: 1px solid var(--rule);
   border-radius: 12px;
@@ -484,11 +486,14 @@ section {
   gap: 16px;
   transition: border-color 0.2s ease-out, transform 0.2s ease-out;
 }
+.proj-card[data-accent="data"] { --item-accent: var(--data); }
+.proj-card[data-accent="signal"] { --item-accent: var(--signal); }
+.proj-card[data-accent="amber"] { --item-accent: var(--amber); }
 .proj-card:hover {
-  border-color: var(--pulse);
+  border-color: var(--item-accent);
   transform: translateY(-2px);
 }
-.proj-card--featured { border-color: color-mix(in srgb, var(--pulse) 40%, var(--rule)); }
+.proj-card--featured { border-color: color-mix(in srgb, var(--item-accent) 40%, var(--rule)); }
 .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .proj-name { font-size: 1.3rem; }
 .proj-org { color: var(--dim); font-size: 14px; }
@@ -505,7 +510,7 @@ section {
 .proj-stat-num {
   font-family: var(--font-geist-pixel-square), monospace;
   font-size: 1.6rem;
-  color: var(--pulse);
+  color: var(--item-accent, var(--pulse));
 }
 .proj-stat-label {
   font-size: 11px;
@@ -522,7 +527,7 @@ section {
   color: var(--ink);
   transition: border-color 0.2s ease-out, transform 0.15s ease-out;
 }
-.proj-link:hover { border-color: var(--pulse); }
+.proj-link:hover { border-color: var(--item-accent, var(--pulse)); }
 .proj-link:active { transform: scale(0.98); }
 .proj-link--primary {
   background: var(--pulse);

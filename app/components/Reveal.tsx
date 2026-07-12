@@ -6,11 +6,13 @@ export default function Reveal({
   delay = 0,
   as: Tag = "div",
   className = "",
+  dataAccent,
 }: {
   children: React.ReactNode;
   delay?: number;
   as?: "div" | "article" | "section";
   className?: string;
+  dataAccent?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -39,6 +41,7 @@ export default function Reveal({
       ref={ref as React.Ref<never>}
       className={`reveal ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      data-accent={dataAccent}
     >
       {children}
     </Tag>

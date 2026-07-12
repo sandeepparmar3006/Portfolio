@@ -137,7 +137,7 @@ export function Projects() {
       </Reveal>
       <div className="proj-featured-row">
         {featured.map((p, i) => (
-          <Reveal as="article" className="proj-card proj-card--featured" key={p.name} delay={i * 80}>
+          <Reveal as="article" className="proj-card proj-card--featured" key={p.name} delay={i * 80} dataAccent={p.accent}>
             <div className="proj-tags" aria-label="Technologies used">
               {p.tags.map((t) => (
                 <span className="proj-tag mono" key={t}>
@@ -182,7 +182,7 @@ export function Projects() {
       </div>
       <div className="proj-grid">
         {rest.map((p, i) => (
-          <Reveal as="article" className="proj-card" key={p.name} delay={i * 80}>
+          <Reveal as="article" className="proj-card" key={p.name} delay={i * 80} dataAccent={p.accent}>
             <div className="proj-tags" aria-label="Technologies used">
               {p.tags.map((t) => (
                 <span className="proj-tag mono" key={t}>
