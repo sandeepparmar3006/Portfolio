@@ -37,7 +37,7 @@ Production URL: `sandeep-parmar.vercel.app` (Vercel project `sandeep-parmar`) - 
 | Styling | Native CSS custom properties (`app/globals.css`) - no Tailwind, no CSS-in-JS |
 | Fonts | `geist` package via `next/font`: GeistPixelSquare (display/headings), GeistSans (body), GeistMono (data labels, tags, nav numbers) |
 | Content | Typed data in `lib/data.ts` - sections render from arrays, not hardcoded JSX |
-| Client islands | `Rail.tsx` (scroll progress), `Topbar.tsx` (mobile menu), `Reveal.tsx` (scroll-triggered fade-in) - everything else is a Server Component |
+| Client islands | `Rail.tsx` (scroll progress), `Topbar.tsx` (mobile menu), `Reveal.tsx` (scroll-triggered fade-in), `DataField.tsx` (Canvas2D ambient particle field in hero) - everything else is a Server Component |
 
 **No Tailwind. No component library. No animation library beyond native IntersectionObserver + CSS transitions.** Keep it that way unless a WebGL/Motion need is explicitly approved.
 
@@ -111,9 +111,13 @@ app/
     Rail.tsx          → 'use client', scroll progress rail
     Topbar.tsx         → 'use client', nav + mobile burger menu
     Reveal.tsx          → 'use client', scroll-reveal wrapper
+    DataField.tsx        → 'use client', Canvas2D ambient particle field (hero background)
     sections.tsx         → Server Components: Hero, Competencies, Experience, Projects, Skills, Education, Contact
 lib/
   data.ts              → all content: nav, heroStats, competencies, stack, timeline, projects, skillGroups, education, contacts
+  particles/
+    engine.ts            → ParticleField class: physics, connecting lines, pointer repel
+    colors.ts             → reads --pulse/--data/--signal from computed styles for particle theme
 ```
 
 **Content changes go in `lib/data.ts`, not JSX.** Adding a project, skill, or timeline entry = add an array entry, not a new component.
@@ -177,7 +181,7 @@ Hiring managers, tech recruiters, startup CTOs/founders, peers in data/AI/web. N
 - **Accent system - chrome vs content items:**
   - `--pulse` is the only accent for UI chrome: nav, CTAs, links, focus rings, active states, text emphasis. Never swapped per section.
   - Content items (currently: project cards) may each own ONE accent from `--pulse` / `--data` / `--signal` / `--amber`, set via `accent` field in `lib/data.ts` and rendered as `data-accent` on the card (`--item-accent` custom property in `globals.css`). Omitted = `--pulse`.
-  - Item-accent surfaces are small only: hover border, featured border tint, stat numbers, link hover border. Never full backgrounds, headlines, or body text. Cards sit neutral at rest (except featured border tint); color appears on hover.
+  - Item-accent surfaces are small only: card border, featured border tint, stat numbers, link hover border. Never full backgrounds, headlines, or body text. Color triggers on scroll-reveal (`.reveal.in`, fires once per card as it enters viewport) so it's visible on mobile/trackpad, not hover-gated; `:hover` reinforces the same color on top for desktop pointer users.
   - Same item = same color everywhere it appears, permanently. Consistency lock is per-item, not per-page.
   - Cap: 4 item colors total. Do not add a fifth token for variety.
 - Exception: the data-node motif (particle field + its static echoes) uses the semantic tokens (`--pulse`, `--data`, `--signal`) together, since that palette already carries meaning (data/tech, success/active) tied to the "Data · AI Systems" positioning. This is a decorative/background system, not a text or interactive accent.

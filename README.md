@@ -9,7 +9,7 @@ Personal portfolio site for Sandeep Kanaram Parmar, Data Analyst building AI sys
 - Next.js 16 (App Router, TypeScript, Server Components by default)
 - Native CSS custom properties for styling, no Tailwind or CSS-in-JS
 - `geist` font package via `next/font` (Geist Sans, Geist Mono, Geist Pixel Square)
-- Three client islands only: `Rail.tsx` (scroll progress), `Topbar.tsx` (mobile nav), `Reveal.tsx` (scroll-reveal), plus `DataField.tsx` (Canvas2D ambient particle field in the hero)
+- Four client islands only: `Rail.tsx` (scroll progress), `Topbar.tsx` (mobile nav), `Reveal.tsx` (scroll-reveal), `DataField.tsx` (Canvas2D ambient particle field in the hero)
 
 No component library, no animation library, no external API calls or third-party scripts.
 
@@ -43,6 +43,6 @@ Deployed to Vercel via `vercel --prod` (no git integration configured; pushes to
 
 ## Design
 
-Dark tech-editorial visual language. `--pulse` (burnt red) is the single accent for UI chrome (nav, CTAs, links, focus states). Individual project cards carry their own accent color (`--data`, `--signal`, `--amber`), revealed on hover only, so each project keeps a distinct identity without breaking the site-wide single-accent rule.
+Dark tech-editorial visual language. `--pulse` (burnt red) is the single accent for UI chrome (nav, CTAs, links, focus states). Individual project cards carry their own accent color (`--data`, `--signal`, `--amber`), triggered on scroll-reveal and reinforced on hover, so each project keeps a distinct identity without breaking the site-wide single-accent rule.
 
 See [CLAUDE.md](CLAUDE.md) for the full design system, content rules, and security posture.
