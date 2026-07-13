@@ -10,13 +10,14 @@ import {
   type MotionValue,
 } from "motion/react";
 
-const MAX_OFFSET = 40; // px, clamped parallax travel for the nearest blob
+const MAX_OFFSET = 56; // px, clamped parallax travel for the nearest blob
 const SPRING = { stiffness: 50, damping: 20 };
 
 const BLOBS = [
   { variant: "a", depth: 1 },
   { variant: "b", depth: 0.65 },
   { variant: "c", depth: 0.35 },
+  { variant: "d", depth: 0.5 },
 ] as const;
 
 function AuroraBlob({

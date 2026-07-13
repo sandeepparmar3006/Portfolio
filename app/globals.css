@@ -336,7 +336,7 @@ section {
   animation: aurora-drift-a 42s ease-in-out infinite;
 }
 .aurora-blob--a .aurora-blob-inner {
-  background: radial-gradient(circle, color-mix(in srgb, var(--pulse) 20%, transparent) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--pulse) 30%, transparent) 0%, transparent 70%);
 }
 .aurora-blob--b {
   width: 52vmax;
@@ -346,7 +346,7 @@ section {
   animation: aurora-drift-b 36s ease-in-out infinite;
 }
 .aurora-blob--b .aurora-blob-inner {
-  background: radial-gradient(circle, color-mix(in srgb, var(--data) 12%, transparent) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--data) 20%, transparent) 0%, transparent 70%);
 }
 .aurora-blob--c {
   width: 42vmax;
@@ -358,17 +358,31 @@ section {
 .aurora-blob--c .aurora-blob-inner {
   background: radial-gradient(circle, color-mix(in srgb, var(--pulse) 22%, var(--rule) 78%) 0%, transparent 70%);
 }
+.aurora-blob--d {
+  width: 30vmax;
+  height: 30vmax;
+  top: -10%;
+  right: -14%;
+  animation: aurora-drift-d 39s ease-in-out infinite;
+}
+.aurora-blob--d .aurora-blob-inner {
+  background: radial-gradient(circle, color-mix(in srgb, var(--pulse) 30%, var(--data) 70%) 0%, transparent 70%);
+}
 @keyframes aurora-drift-a {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(5%, 4%); }
+  50% { transform: translate(7%, 6%); }
 }
 @keyframes aurora-drift-b {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-4%, -5%); }
+  50% { transform: translate(-6%, -7%); }
 }
 @keyframes aurora-drift-c {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(4%, -3%); }
+  50% { transform: translate(6%, -5%); }
+}
+@keyframes aurora-drift-d {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-5%, 5%); }
 }
 .hero-aurora--static .aurora-blob {
   animation: none;
