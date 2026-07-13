@@ -12,9 +12,9 @@ export default function Topbar() {
           Sandeep&nbsp;Parmar <span className="topbar-sep">/</span> Data Analyst · AI Systems
         </div>
         <nav className="topbar-nav" aria-label="Section navigation">
-          {nav.map((n, i) => (
+          {nav.map((n) => (
             <a key={n.id} href={`#${n.id}`}>
-              {String(i + 1).padStart(2, "0")} {n.label}
+              {n.label}
             </a>
           ))}
         </nav>
@@ -36,9 +36,9 @@ export default function Topbar() {
         className={`mobile-nav${open ? " open" : ""}`}
         aria-label="Mobile section navigation"
       >
-        {nav.map((n, i) => (
+        {nav.map((n) => (
           <a key={n.id} href={`#${n.id}`} onClick={() => setOpen(false)}>
-            {String(i + 1).padStart(2, "0")} · {n.label}
+            {n.label}
           </a>
         ))}
       </nav>
