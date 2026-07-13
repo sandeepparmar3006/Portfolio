@@ -759,6 +759,13 @@ section {
   .topbar { left: 0; }
   .topbar-nav, .topbar-cta { display: none; }
   .topbar-burger { display: flex; }
+  .topbar-id {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .mobile-nav.open { display: flex; }
   section { padding: 64px 20px; }
   .comp-grid,
