@@ -2,16 +2,16 @@
    Token names carried over from v1 styles.css, values remapped to dark theme. */
 
 :root {
-  --ink: #e8e6df;        /* primary text (was near-black, now bone) */
-  --paper: #0c0c10;      /* page background (was warm paper, now off-black) */
-  --warm: #14141a;       /* subtle surface / card bg */
-  --rule: #26262e;       /* borders / dividers */
-  --dim: #8a8894;        /* muted / secondary text */
+  --ink: #e8e6df;        /* primary text — bone */
+  --paper: #0f0e13;      /* page background — violet-tinted off-black */
+  --warm: #17131f;       /* subtle surface / card bg — violet undertone */
+  --rule: #2a2732;       /* borders / dividers */
+  --dim: #8a8894;        /* muted / secondary text (5.52:1 on paper) */
   --accent: #d4d2ca;     /* light accent */
-  --pulse: #e05c3e;      /* primary accent — burnt red, brightened for dark bg contrast */
-  --data: #5b8def;       /* blue — data / tech / links */
-  --signal: #34d399;     /* green — success / active state */
-  --amber: #d9a13e;      /* amber — item accent only, never UI chrome */
+  --pulse: #b8a4f0;      /* primary accent — muted lilac (8.79:1 on paper) */
+  --data: #67a0f0;       /* blue — data / tech / links, held clear of lilac hue (7.2:1) */
+  --signal: #34d399;     /* green — success / active state (10.0:1) */
+  --amber: #d9a13e;      /* amber — item accent only, never UI chrome (8.35:1) */
 
   --rail-w: 64px;
   --topbar-h: 76px;
@@ -313,17 +313,68 @@ section {
     display: none;
   }
 }
-.hero-field-canvas {
+.hero-aurora {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: 0;
+  overflow: hidden;
   pointer-events: none;
-  display: block;
+}
+.aurora-blob { position: absolute; }
+.aurora-blob-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+.aurora-blob--a {
+  width: 60vmax;
+  height: 60vmax;
+  top: -22%;
+  left: -12%;
+  animation: aurora-drift-a 42s ease-in-out infinite;
+}
+.aurora-blob--a .aurora-blob-inner {
+  background: radial-gradient(circle, color-mix(in srgb, var(--pulse) 20%, transparent) 0%, transparent 70%);
+}
+.aurora-blob--b {
+  width: 52vmax;
+  height: 52vmax;
+  bottom: -26%;
+  right: -8%;
+  animation: aurora-drift-b 36s ease-in-out infinite;
+}
+.aurora-blob--b .aurora-blob-inner {
+  background: radial-gradient(circle, color-mix(in srgb, var(--data) 12%, transparent) 0%, transparent 70%);
+}
+.aurora-blob--c {
+  width: 42vmax;
+  height: 42vmax;
+  top: 28%;
+  left: 38%;
+  animation: aurora-drift-c 48s ease-in-out infinite;
+}
+.aurora-blob--c .aurora-blob-inner {
+  background: radial-gradient(circle, color-mix(in srgb, var(--pulse) 22%, var(--rule) 78%) 0%, transparent 70%);
+}
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(5%, 4%); }
+}
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-4%, -5%); }
+}
+@keyframes aurora-drift-c {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4%, -3%); }
+}
+.hero-aurora--static .aurora-blob {
+  animation: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-field-canvas { display: none; }
+  .hero-aurora .aurora-blob { animation: none; }
 }
 .hero-inner { position: relative; z-index: 1; }
 .hero-eyebrow {

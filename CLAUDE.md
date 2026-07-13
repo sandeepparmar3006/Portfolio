@@ -37,9 +37,9 @@ Production URL: `sandeep-parmar.vercel.app` (Vercel project `sandeep-parmar`) - 
 | Styling | Native CSS custom properties (`app/globals.css`) - no Tailwind, no CSS-in-JS |
 | Fonts | `geist` package via `next/font`: GeistPixelSquare (display/headings), GeistSans (body), GeistMono (data labels, tags, nav numbers) |
 | Content | Typed data in `lib/data.ts` - sections render from arrays, not hardcoded JSX |
-| Client islands | `Rail.tsx` (scroll progress), `Topbar.tsx` (mobile menu), `Reveal.tsx` (scroll-triggered fade-in), `DataField.tsx` (Canvas2D ambient particle field in hero) - everything else is a Server Component |
+| Client islands | `Rail.tsx` (scroll progress), `Topbar.tsx` (mobile menu), `Reveal.tsx` (scroll-triggered fade-in), `HeroAurora.tsx` (Motion-driven ambient gradient blobs in hero, replaces the retired `DataField.tsx` particle canvas) - everything else is a Server Component |
 
-**No Tailwind. No component library. No animation library beyond native IntersectionObserver + CSS transitions.** Keep it that way unless a WebGL/Motion need is explicitly approved.
+**No Tailwind. No component library.** `motion` (`motion/react`) approved 2026-07-13, scoped to `HeroAurora.tsx` only - drift/parallax via `useMotionValue`/`useSpring`/`useTransform`, never `useState`. Every other client island stays native IntersectionObserver + CSS transitions; do not spread Motion beyond the hero without a fresh approval.
 
 ---
 
@@ -48,17 +48,17 @@ Production URL: `sandeep-parmar.vercel.app` (Vercel project `sandeep-parmar`) - 
 ### Color Tokens (dark theme, all in `app/globals.css` `:root`)
 ```css
 --ink:    #e8e6df   /* primary text - bone */
---paper:  #0c0c10   /* page background - off-black */
---warm:   #14141a   /* subtle surface / card bg */
---rule:   #26262e   /* borders / dividers */
+--paper:  #0f0e13   /* page background - violet-tinted off-black */
+--warm:   #17131f   /* subtle surface / card bg - violet undertone */
+--rule:   #2a2732   /* borders / dividers */
 --dim:    #8a8894   /* muted / secondary text */
 --accent: #d4d2ca   /* light accent */
---pulse:  #e05c3e   /* primary accent - burnt red */
---data:   #5b8def   /* blue - data / tech / links */
+--pulse:  #b8a4f0   /* primary accent - muted lilac (was burnt red, migrated 2026-07-13) */
+--data:   #67a0f0   /* blue - data / tech / links, held 41deg hue-clear of --pulse for semantic distinction */
 --signal: #34d399   /* green - success / active state */
 --amber:  #d9a13e   /* amber - item accent only, never UI chrome */
 ```
-**Never hardcode hex values. Always use these tokens.** All pass WCAG AA against `--paper` (verified: ink 15.6:1, dim 5.6:1, pulse 5.4:1, data 6.0:1, signal 10.2:1, amber 8.4:1).
+**Never hardcode hex values. Always use these tokens.** All pass WCAG AA against `--paper` (verified: ink 15.4:1, dim 5.5:1, pulse 8.8:1, data 7.2:1, signal 10.0:1, amber 8.4:1).
 
 ### Typography
 | Role | Font | CSS var |
@@ -111,13 +111,10 @@ app/
     Rail.tsx          → 'use client', scroll progress rail
     Topbar.tsx         → 'use client', nav + mobile burger menu
     Reveal.tsx          → 'use client', scroll-reveal wrapper
-    DataField.tsx        → 'use client', Canvas2D ambient particle field (hero background)
+    HeroAurora.tsx        → 'use client', Motion-driven ambient gradient blobs (hero background) - idle CSS drift + pointer-spring parallax, replaces the retired Canvas2D particle field
     sections.tsx         → Server Components: Hero, Competencies, Experience, Projects, Skills, Education, Contact
 lib/
   data.ts              → all content: nav, heroStats, competencies, stack, timeline, projects, skillGroups, education, contacts
-  particles/
-    engine.ts            → ParticleField class: physics, connecting lines, pointer repel
-    colors.ts             → reads --pulse/--data/--signal from computed styles for particle theme
 ```
 
 **Content changes go in `lib/data.ts`, not JSX.** Adding a project, skill, or timeline entry = add an array entry, not a new component.

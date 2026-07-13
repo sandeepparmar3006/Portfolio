@@ -1,5 +1,5 @@
 import Reveal from "./Reveal";
-import DataField from "./DataField";
+import HeroAurora from "./HeroAurora";
 import {
   heroStats,
   competencies,
@@ -17,7 +17,7 @@ export function Hero() {
       <div className="hero-watermark" aria-hidden="true">
         DATA
       </div>
-      <DataField />
+      <HeroAurora />
       <div className="hero-inner">
         <Reveal>
           <div className="hero-eyebrow">
