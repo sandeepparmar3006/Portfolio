@@ -121,6 +121,7 @@ export const projects: Project[] = [
       "Answers anime and manga questions with 96% accuracy on a 45-question held-out eval, by routing every query through an LLM function-calling router across three retrieval paths",
       "Router picks between semantic search, structured filter lookup, and review-based opinion search across anime and manga, including franchise relations (sequels, prequels, side stories) for watch-order questions that top-k retrieval alone gets wrong",
       "Streams answers token-by-token over SSE, surfaces sources as cards with real AniList cover art, exposes retrieval reasoning in a live inspectable panel, and guards the public endpoint with per-IP and global rate limiting",
+      "Root-caused two production retrieval bugs against live data instead of guessing: franchise sequels were crowding out a title's own plot chunks, and alphabetical ordering was hiding popular titles from broad filters. Shipped a pipeline that flags low-confidence queries for corpus review and refreshes weekly via GitHub Actions",
     ],
     stats: [
       { value: "96%", label: "Answer accuracy" },
