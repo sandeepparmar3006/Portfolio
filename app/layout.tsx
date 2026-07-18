@@ -7,7 +7,7 @@ import { GeistPixelSquare } from "geist/font/pixel";
 const siteUrl = "https://sandeep-parmar.vercel.app";
 const title = "Sandeep Kanaram Parmar - Data Analyst · AI Systems";
 const description =
-  "Sandeep Parmar. Data analysis, AI systems engineering, and shipped web products. RAG assistant at 98% tool-routing accuracy, live production sites, and dashboard work.";
+  "Sandeep Parmar. Data analysis, AI systems engineering, and shipped web products. RAG assistant at 100% tool-routing accuracy, live production sites, and dashboard work.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
