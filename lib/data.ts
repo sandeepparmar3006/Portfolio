@@ -17,7 +17,7 @@ export const competencies = [
   { name: "Data Analysis", desc: "Quantitative & qualitative research, statistical modelling, pattern recognition" },
   { name: "Pipeline Development", desc: "ETL design, data preprocessing, workflow automation at scale" },
   { name: "Visualisation", desc: "Tableau, Power BI, and custom dashboards that tell a clear story" },
-  { name: "RAG Engineering", desc: "LLM function-calling router, pgvector retrieval, 100% retrieval accuracy - SenpAI" },
+  { name: "RAG Engineering", desc: "LLM function-calling router, pgvector retrieval, 100% retrieval hit rate - SenpAI" },
   { name: "Machine Learning", desc: "Classification, NLP, federated learning, scikit-learn, Spark" },
   { name: "Digital Strategy", desc: "Lighthouse SEO 100 · Accessibility 96 - leading Arbuda's digital presence" },
 ];
@@ -118,10 +118,9 @@ export const projects: Project[] = [
     featured: true,
     accent: "data",
     points: [
-      "Answers anime and manga questions across a 4,000-title corpus (adding manga and 8,600+ fan reviews this year) with 100% retrieval accuracy on a 45-question held-out eval, by routing every query through an LLM function-calling router across three retrieval paths",
+      "Answers anime and manga questions across a 4,000-title corpus (adding manga and 8,600+ fan reviews this year) with 100% retrieval hit rate on a 45-question held-out eval, by routing every query through an LLM function-calling router across three retrieval paths",
       "Router picks between semantic search, structured filter lookup, and review-based opinion search across anime and manga, including franchise relations (sequels, prequels, side stories) for watch-order questions that top-k retrieval alone gets wrong",
-      "Streams answers token-by-token over SSE, surfaces sources as cards with real AniList cover art, exposes retrieval reasoning in a live inspectable panel, and guards the public endpoint with per-IP and global rate limiting",
-      "Root-caused two production crashes against live data instead of guessing during a 4x corpus expansion: a token-limit overflow from an uncapped metadata field, and a database timeout from bulk vector-index inserts. Shipped incremental checkpointing so a future crash can't lose already-computed work again",
+      "Guards the public endpoint with per-IP and global rate limiting, and root-caused two live production crashes during a 4x corpus expansion (a token-limit overflow, a database bulk-insert timeout) by shipping incremental checkpointing so a future crash can't lose completed work",
     ],
     stats: [
       { value: "93%", label: "Answer accuracy" },
