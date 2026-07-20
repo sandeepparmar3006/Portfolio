@@ -52,13 +52,13 @@ export const stack: { name: string; core?: boolean }[] = [
 export const timeline = [
   {
     date: "May 2026 - Current",
-    title: "Digital Strategy & Operations Manager",
+    title: "Strategy & Operations Manager",
     org: "Arbuda Plastic · Mumbai, India",
     points: [
-      "Leading Arbuda Plastic's digital presence, including website, online product catalogue, and key customer touchpoints.",
-      "Ensuring product information and visuals are accurate, structured, and consistently presented across all digital channels.",
-      "Supporting core business operations by organising workflows, prioritising tasks, and coordinating between sales, production, and management.",
-      "Tracking basic digital and operational metrics and suggesting improvements to efficiency, customer experience, and decision-making.",
+      "Researching new production and product improvement ideas by analysing customer feedback and market gaps, recommending changes to sales and production teams.",
+      "Evaluating expansion opportunities across new product lines and markets, using operational data to prioritise which ideas move forward.",
+      "Coordinating core business operations by organising workflows, prioritising tasks, and aligning sales, production, and management.",
+      "Leading the company's digital presence, including website and online product catalogue, keeping product information accurate and consistent across channels.",
     ],
     metrics: ["↑ Increase in new customers", "↑ Increase in branded interest"],
   },
