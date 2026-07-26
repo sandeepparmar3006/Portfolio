@@ -17,7 +17,7 @@ export const competencies = [
   { name: "Data Analysis", desc: "Quantitative & qualitative research, statistical modelling, pattern recognition" },
   { name: "Pipeline Development", desc: "ETL design, data preprocessing, workflow automation at scale" },
   { name: "Visualisation", desc: "Tableau, Power BI, and custom dashboards that tell a clear story" },
-  { name: "RAG Engineering", desc: "LLM function-calling router, pgvector retrieval, 100% retrieval hit rate - SenpAI" },
+  { name: "RAG Engineering", desc: "LLM function-calling router, Qdrant retrieval, 98% retrieval hit rate - SenpAI" },
   { name: "Machine Learning", desc: "Classification, NLP, federated learning, scikit-learn, Spark" },
   { name: "Digital Strategy", desc: "Lighthouse SEO 100 · Accessibility 96 - leading Arbuda's digital presence" },
 ];
@@ -114,17 +114,17 @@ export const projects: Project[] = [
   {
     name: "SenpAI",
     org: "Anime & Manga RAG Assistant · Live in Production",
-    tags: ["RAG", "LLM Function Calling", "pgvector", "Python", "Node.js"],
+    tags: ["RAG", "LLM Function Calling", "Qdrant", "Python", "Node.js"],
     featured: true,
     accent: "data",
     points: [
-      "Answers anime and manga questions across a 4,000-title corpus (adding manga and 8,600+ fan reviews this year) with 100% retrieval hit rate on a 45-question held-out eval, by routing every query through an LLM function-calling router across three retrieval paths",
-      "Router picks between semantic search, structured filter lookup, and review-based opinion search across anime and manga, including franchise relations (sequels, prequels, side stories) for watch-order questions that top-k retrieval alone gets wrong",
-      "Guards the public endpoint with per-IP and global rate limiting, and root-caused two live production crashes during a 4x corpus expansion (a token-limit overflow, a database bulk-insert timeout) by shipping incremental checkpointing so a future crash can't lose completed work",
+      "Answers anime and manga questions across an 8,000-title corpus with 98% retrieval accuracy on a 45-question held-out eval, routing every query through an LLM function-calling router across three retrieval paths",
+      "Diagnosed and fixed a live retrieval regression caused by corpus growth, where franchise sequels and spin-offs began out-ranking canonical titles, by reworking the similarity tie-break logic and restoring baseline accuracy without a corpus rollback",
+      "Hardened the public endpoint with per-IP and global rate limiting, and shipped crash-safe batched ingestion after two production incidents risked losing paid embedding work",
     ],
     stats: [
-      { value: "93%", label: "Answer accuracy" },
-      { value: "100%", label: "Retrieval hit rate" },
+      { value: "98%", label: "Retrieval hit rate" },
+      { value: "96%", label: "Answer accuracy" },
       { value: "100%", label: "Route match" },
     ],
     links: [
@@ -190,7 +190,7 @@ export const skillGroups = [
   { cat: "Libraries", items: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Spark"] },
   { cat: "Visualisation", items: ["Tableau", "Power BI", "Excel (Advanced)"] },
   { cat: "Cloud", items: ["AWS", "Azure", "GCP", "Azure ML", "Key Vault", "Vercel Serverless"] },
-  { cat: "Databases", items: ["MySQL", "Oracle", "Firebase", "SQL Server", "pgvector (Supabase)"] },
+  { cat: "Databases", items: ["MySQL", "Oracle", "Firebase", "SQL Server", "Qdrant"] },
   { cat: "Methods", items: ["ETL Design", "Statistical Analysis", "Machine Learning", "Agile", "NLP"] },
   { cat: "AI & LLM Engineering", items: ["RAG Pipelines", "LLM Function Calling", "Vector Search", "Eval Harness Design", "Together AI", "Node.js"] },
 ];
