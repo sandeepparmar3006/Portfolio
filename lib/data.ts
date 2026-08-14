@@ -17,7 +17,7 @@ export const competencies = [
   { name: "Data Analysis", desc: "Quantitative & qualitative research, statistical modelling, pattern recognition" },
   { name: "Pipeline Development", desc: "ETL design, data preprocessing, workflow automation at scale" },
   { name: "Visualisation", desc: "Tableau, Power BI, and custom dashboards that tell a clear story" },
-  { name: "RAG Engineering", desc: "LLM function-calling router, Qdrant retrieval, 98% retrieval hit rate - SenpAI" },
+  { name: "RAG Engineering", desc: "LLM function-calling router, Qdrant retrieval, 97% retrieval hit rate - SenpAI" },
   { name: "Machine Learning", desc: "Classification, NLP, federated learning, scikit-learn, Spark" },
   { name: "Digital Strategy", desc: "Lighthouse SEO 100 · Accessibility 96 - leading Arbuda's digital presence" },
 ];
@@ -118,13 +118,13 @@ export const projects: Project[] = [
     featured: true,
     accent: "data",
     points: [
-      "Answers anime and manga questions across an 8,000-title corpus with 98% retrieval accuracy on a 45-question held-out eval, routing every query through an LLM function-calling router across three retrieval paths",
+      "Answers anime and manga questions across an 8,900+ title corpus with 97% retrieval accuracy on a 69-question held-out eval, routing every query through an LLM function-calling router across three retrieval paths",
       "Diagnosed and fixed a live retrieval regression caused by corpus growth, where franchise sequels and spin-offs began out-ranking canonical titles, by reworking the similarity tie-break logic and restoring baseline accuracy without a corpus rollback",
-      "Hardened the public endpoint with per-IP and global rate limiting, and shipped crash-safe batched ingestion after two production incidents risked losing paid embedding work",
+      "Added LLM-judge groundedness scoring to catch answers not actually supported by retrieved context, plus a CI gate that fails pull requests on retrieval regression - the exact class of bug that once silently cut routing accuracy from 100% to 64%",
     ],
     stats: [
-      { value: "98%", label: "Retrieval hit rate" },
-      { value: "96%", label: "Answer accuracy" },
+      { value: "97%", label: "Retrieval hit rate" },
+      { value: "97%", label: "Answer accuracy" },
       { value: "100%", label: "Route match" },
     ],
     links: [
