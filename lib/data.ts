@@ -51,7 +51,7 @@ export const stack: { name: string; core?: boolean }[] = [
 
 export const timeline = [
   {
-    date: "May 2026 - Current",
+    date: "Jun 2026 - Current",
     title: "Strategy & Operations Manager",
     org: "Arbuda Plastic · Mumbai, India",
     points: [
